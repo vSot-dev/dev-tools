@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 "use strict";
 
-require('../dist/cli').init(process.argv);
+require('../dist/main').create(process.argv);
