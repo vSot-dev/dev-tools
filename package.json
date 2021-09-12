@@ -1,6 +1,6 @@
 {
   "name": "@vsot-dev/dev-tools",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An intuitive CLI to create and run fullstack applications!",
   "main": "dist/main.js",
   "bin": {
@@ -30,7 +30,6 @@
   "dependencies": {
     "chalk": "^4.1.0",
     "execa": "^5.0.0",
-    "firebase-tools": "^9.18.0",
     "inquirer": "^7.3.3",
     "listr": "^0.14.3",
     "ncp": "^2.0.0",
