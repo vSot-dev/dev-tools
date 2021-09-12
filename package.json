@@ -1,17 +1,17 @@
 {
   "name": "@vsot-dev/dev-tools",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An intuitive CLI to create and run fullstack applications!",
   "main": "dist/main.js",
   "bin": {
-    "@vsot-dev/create-app": "bin/create-app.js",
-    "create-app": "bin/create-app.js",
-    "@vsot-dev/run-app": "bin/run-app.js",
-    "run-app": "bin/run-app.js",
-    "@vsot-dev/build-app": "bin/build-app.js",
-    "build-app": "bin/build-app.js",
-    "@vsot-dev/deploy-app": "bin/deploy-app.js",
-    "deploy-app": "bin/deploy-app.js"
+    "@vsot-dev/create": "bin/create-app.js",
+    "create": "bin/create-app.js",
+    "@vsot-dev/run": "bin/run-app.js",
+    "run": "bin/run-app.js",
+    "@vsot-dev/build": "bin/build-app.js",
+    "build": "bin/build-app.js",
+    "@vsot-dev/deploy": "bin/deploy-app.js",
+    "deploy": "bin/deploy-app.js"
   },
   "scripts": {
     "build": "tsc"

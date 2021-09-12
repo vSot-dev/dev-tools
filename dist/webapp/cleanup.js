@@ -8,8 +8,8 @@ const chalk_1 = __importDefault(require("chalk"));
 const ToDelete = {
     cwd: process.cwd(),
     files: [
-        "Sapper/__sapper__",
-        "Sapper/src/node_modules"
+        "Website/__sapper__",
+        "Website/src/node_modules"
     ]
 };
 function WebAppCleanup() {

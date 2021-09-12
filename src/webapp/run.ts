@@ -7,7 +7,7 @@ export default async function WebAppStart() {
     console.info(`%s Starting Sapper`, Chalk.green.bold("PROCESS:"));
 
     await Execa("npm", ["run", "dev"], {
-        cwd: `${process.cwd()}/Sapper`,
+        cwd: `${process.cwd()}/Website`,
         detached: true,
         shell: true,
         stdio: 'inherit'

@@ -10,8 +10,8 @@ const Project: ProjectDir = {
 const Files: FileToCopy = {
     cwd: process.cwd(),
     files: [
-        ["Sapper/static", "Firebase/static"],
-        ["Sapper/__sapper__", "Firebase/functions/__sapper__"],
+        ["Website/static", "Server/static"],
+        ["Website/__sapper__", "Server/functions/__sapper__"],
     ]
 }
 

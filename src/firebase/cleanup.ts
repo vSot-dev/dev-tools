@@ -6,20 +6,20 @@ const ToDelete: FileList = {
     cwd: process.cwd(),
 
     files: [
-        "Firebase/functions/__sapper__",
-        "Firebase/functions/lib",
-        "Firebase/static/*",
-        "Firebase/database-debug.log",
-        "Firebase/firestore-debug.log",
-        "Firebase/pubsub-debug.log",
-        "Firebase/ui-debug.log"
+        "Server/functions/__sapper__",
+        "Server/functions/lib",
+        "Server/static/*",
+        "Server/database-debug.log",
+        "Server/firestore-debug.log",
+        "Server/pubsub-debug.log",
+        "Server/ui-debug.log"
     ]
 
 }
 
 
 
-export default function FirebaseCleanUp () {
+export default function ServerCleanUp () {
 
     deleteFiles(ToDelete)
         .catch(() => {

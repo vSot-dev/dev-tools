@@ -8,7 +8,7 @@ const execa_1 = __importDefault(require("execa"));
 async function WebAppStart() {
     console.info(`%s Starting Sapper`, chalk_1.default.green.bold("PROCESS:"));
     await (0, execa_1.default)("npm", ["run", "dev"], {
-        cwd: `${process.cwd()}/Sapper`,
+        cwd: `${process.cwd()}/Website`,
         detached: true,
         shell: true,
         stdio: 'inherit'

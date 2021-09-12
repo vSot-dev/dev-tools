@@ -21,7 +21,7 @@ async function run(args) {
             name: "emulators",
             type: "confirm",
             default: false,
-            message: "Do you want to run firebase emulators?",
+            message: "Do you want to run server emulators?",
         }
     ];
     const answers = await inquirer_1.default.prompt(Questions);
@@ -40,14 +40,14 @@ exports.run = run;
 async function deploy(args) {
     const Questions = [
         {
-            name: "sapper",
+            name: "website",
             type: "confirm",
             default: false,
-            message: "Do you want to rebuild sapper?",
+            message: "Do you want to rebuild website?",
         }
     ];
     const answers = await inquirer_1.default.prompt(Questions);
-    if (answers.sapper) {
+    if (answers.website) {
         await (0, build_1.default)();
     }
     await (0, build_2.default)();
@@ -78,10 +78,10 @@ async function build(args) {
         }
     ];
     const answers = await inquirer_1.default.prompt(Questions);
-    if (answers.toBuild.includes("Firebase")) {
+    if (answers.toBuild.includes("Server")) {
         await (0, build_2.default)();
     }
-    if (answers.toBuild.includes("Sapper")) {
+    if (answers.toBuild.includes("Website")) {
         await (0, build_1.default)();
     }
 }

@@ -1,14 +1,11 @@
 import buildProject, { ProjectDir } from '../utils/buildProject';
-import Chalk from 'chalk';
 
 const Project: ProjectDir = {
     cwd: process.cwd(),
-    dir: "Firebase/functions"
+    dir: "Server/functions"
 }
 
-
-
-export default async function WebAppBuild () {
+export default async function ServerBuild () {
 
     await buildProject(Project);
 

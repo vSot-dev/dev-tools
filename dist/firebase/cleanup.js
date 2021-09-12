@@ -8,19 +8,19 @@ const chalk_1 = __importDefault(require("chalk"));
 const ToDelete = {
     cwd: process.cwd(),
     files: [
-        "Firebase/functions/__sapper__",
-        "Firebase/functions/lib",
-        "Firebase/static/*",
-        "Firebase/database-debug.log",
-        "Firebase/firestore-debug.log",
-        "Firebase/pubsub-debug.log",
-        "Firebase/ui-debug.log"
+        "Server/functions/__sapper__",
+        "Server/functions/lib",
+        "Server/static/*",
+        "Server/database-debug.log",
+        "Server/firestore-debug.log",
+        "Server/pubsub-debug.log",
+        "Server/ui-debug.log"
     ]
 };
-function FirebaseCleanUp() {
+function ServerCleanUp() {
     (0, deleteFiles_1.default)(ToDelete)
         .catch(() => {
         console.error("%s Clean up failed!\nProcess was unable to delete some files!", chalk_1.default.red.bold("ERROR:"));
     });
 }
-exports.default = FirebaseCleanUp;
+exports.default = ServerCleanUp;

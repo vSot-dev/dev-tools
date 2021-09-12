@@ -2,10 +2,10 @@ import Inquirer, { QuestionCollection, Answers } from "inquirer";
 import WebAppBuild from './webapp/build';
 import WebAppStart from './webapp/run';
 import WebAppCleanup from './webapp/cleanup'
-import FirebaseBuild from './firebase/build';
-import FirebaseDeploy from './firebase/deploy';
-import FirebaseEmulatorsStart from './firebase/run';
-import FirebaseCleanup from './firebase/cleanup';
+import ServerBuild from './firebase/build';
+import ServerDeploy from './firebase/deploy';
+import ServerEmulatorsStart from './firebase/run';
+import ServerCleanup from './firebase/cleanup';
 import { init } from './cli';
 
 export async function create (args: any) {
@@ -20,7 +20,7 @@ export async function run (args: any) {
             name: "emulators",
             type: "confirm",
             default: false,
-            message: "Do you want to run firebase emulators?",
+            message: "Do you want to run server emulators?",
         }
     ];
 
@@ -28,9 +28,9 @@ export async function run (args: any) {
 
     if (answers.emulators) {
         await WebAppBuild();
-        await FirebaseBuild();
-        await FirebaseEmulatorsStart();
-        await FirebaseCleanup();
+        await ServerBuild();
+        await ServerEmulatorsStart();
+        await ServerCleanup();
     }
     else {
         await WebAppStart()
@@ -46,22 +46,22 @@ export async function deploy (args: any) {
     const Questions: QuestionCollection =
     [
         {
-            name: "sapper",
+            name: "website",
             type: "confirm",
             default: false,
-            message: "Do you want to rebuild sapper?",
+            message: "Do you want to rebuild website?",
         }
     ];
 
     const answers = await Inquirer.prompt(Questions);
 
-    if (answers.sapper) {
+    if (answers.website) {
         await WebAppBuild();
     }
 
-    await FirebaseBuild();
-    await FirebaseDeploy();
-    await FirebaseCleanup();
+    await ServerBuild();
+    await ServerDeploy();
+    await ServerCleanup();
     await WebAppCleanup();
 
 }
@@ -93,11 +93,11 @@ export async function build (args: any) {
 
     const answers = await Inquirer.prompt(Questions);
 
-    if (answers.toBuild.includes("Firebase")) {
-        await FirebaseBuild();
+    if (answers.toBuild.includes("Server")) {
+        await ServerBuild();
     }
 
-    if (answers.toBuild.includes("Sapper")) {
+    if (answers.toBuild.includes("Website")) {
         await WebAppBuild();
     }
 
